@@ -1,13 +1,19 @@
 {
   "name": "text-tools",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ferramentas de manipulação de texto em Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Sem testes definidos\" && exit 0"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["texto", "ferramentas", "nodejs", "cli"],
+  "author": "Yamii Zinmake7",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
