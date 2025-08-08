@@ -1,41 +1,67 @@
-# CPFX - Validador de CPF 🧾✨
-
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![JavaScript](https://img.shields.io/badge/made_with-JavaScript-yellow.svg)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
-
----
-
-## 🚀 Sobre o Projeto
-
-**CPFX** é um validador de CPF moderno, rápido e modular, desenvolvido em JavaScript puro.  
-Ideal para validar CPFs em formulários, APIs e projetos web, com fácil integração em frontend e backend.
+<h1 align="center">🧠 Validador de CPF</h1>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/26tPoyDhjiJ2g7rEs/giphy.gif" alt="CPF Validation" width="320" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=7AFFB6&center=true&vCenter=true&width=435&lines=Valide+CPFs+de+forma+f%C3%A1cil!;R%C3%A1pido+%26+eficiente+com+JavaScript!;Open+Source+e+100%25+Gratuito." alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square">
+  <img src="https://img.shields.io/badge/feito%20por-Apoloundifinied-blueviolet?style=flat-square">
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-important?style=flat-square">
 </p>
 
 ---
 
-## 📋 Conteúdo
+## 📌 Sobre
 
-- [Instalação](#-instalação)  
-- [Uso](#-uso)  
-- [API](#-api)  
-- [Exemplos](#-exemplos)  
-- [Contribuição](#-contribuição)  
-- [Licença](#-licença)  
+Este é um simples e funcional validador de CPF feito com JavaScript. Ele pode ser facilmente integrado em formulários, APIs ou qualquer sistema web que necessite verificar a validade de um CPF.
 
 ---
 
-## ⚙️ Instalação
+## 🚀 Como Usar
 
-### Manual
+### Importando no seu projeto:
+```js
+// Copie a função para seu projeto
+function validaCPF(cpf) {
+  var Soma = 0
+  var Resto
 
-Baixe o arquivo [`cpfx.js`](./cpfx.js) e importe no seu projeto.
+  var strCPF = String(cpf).replace(/[^\d]/g, '')
 
-### NPM (futuro)
+  if (strCPF.length !== 11) return false
 
-```bash
-npm install cpfx-validator
+  if (
+    [
+      '00000000000',
+      '11111111111',
+      '22222222222',
+      '33333333333',
+      '44444444444',
+      '55555555555',
+      '66666666666',
+      '77777777777',
+      '88888888888',
+      '99999999999',
+    ].includes(strCPF)
+  ) return false
+
+  for (let i = 1; i <= 9; i++) {
+    Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i)
+  }
+
+  Resto = (Soma * 10) % 11
+
+  if (Resto === 10 || Resto === 11) Resto = 0
+  if (Resto !== parseInt(strCPF.substring(9, 10))) return false
+
+  Soma = 0
+  for (let i = 1; i <= 10; i++) {
+    Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i)
+  }
+
+  Resto = (Soma * 10) % 11
+
+  if (Resto === 10 || Resto === 11) Resto = 0
+  return Resto === parseInt(strCPF.substring(10, 11))
+}
