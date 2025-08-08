@@ -8,60 +8,27 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square">
   <img src="https://img.shields.io/badge/feito%20por-Apoloundifinied-blueviolet?style=flat-square">
   <img src="https://img.shields.io/badge/status-em%20desenvolvimento-important?style=flat-square">
+  <img src="https://img.shields.io/npm/v/@snnowip/text-tools?style=flat-square&color=orange" alt="npm version" />
 </p>
 
 ---
 
 ## 📌 Sobre
 
-Este é um simples e funcional validador de CPF feito com JavaScript. Ele pode ser facilmente integrado em formulários, APIs ou qualquer sistema web que necessite verificar a validade de um CPF.
+Este é um simples e funcional validador de CPF feito em JavaScript, agora disponível como pacote npm para fácil integração em seus projetos.
 
 ---
 
 ## 🚀 Como Usar
+// Importando a função do pacote
+const { validaCPF } = require('@snnowip/text-tools')
 
-### Importando no seu projeto:
-```js
-// Copie a função para seu projeto
-function validaCPF(cpf) {
-  var Soma = 0
-  var Resto
+// Exemplo de uso
+console.log(validaCPF('123.456.789-09')) // false
+console.log(validaCPF('935.411.347-80')) // true
 
-  var strCPF = String(cpf).replace(/[^\d]/g, '')
 
-  if (strCPF.length !== 11) return false
+### Instalando via npm
 
-  if (
-    [
-      '00000000000',
-      '11111111111',
-      '22222222222',
-      '33333333333',
-      '44444444444',
-      '55555555555',
-      '66666666666',
-      '77777777777',
-      '88888888888',
-      '99999999999',
-    ].includes(strCPF)
-  ) return false
-
-  for (let i = 1; i <= 9; i++) {
-    Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i)
-  }
-
-  Resto = (Soma * 10) % 11
-
-  if (Resto === 10 || Resto === 11) Resto = 0
-  if (Resto !== parseInt(strCPF.substring(9, 10))) return false
-
-  Soma = 0
-  for (let i = 1; i <= 10; i++) {
-    Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i)
-  }
-
-  Resto = (Soma * 10) % 11
-
-  if (Resto === 10 || Resto === 11) Resto = 0
-  return Resto === parseInt(strCPF.substring(10, 11))
-}
+```bash
+npm install @snnowip/text-tools
