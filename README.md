@@ -1,28 +1,41 @@
-# CPFX - Validador de CPF 🚀
+# CPFX - Validador de CPF 🧾✨
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/Apoloundifinied/ApoloCpf/releases)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
-[![Made with JavaScript](https://img.shields.io/badge/made%20with-JavaScript-yellow)](#)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![JavaScript](https://img.shields.io/badge/made_with-JavaScript-yellow.svg)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 ---
 
-## ⚡ Sobre o CPFX
+## 🚀 Sobre o Projeto
 
-**CPFX** é um validador moderno, leve e modular para CPF em JavaScript, perfeito para usar em seus projetos front-end ou back-end com facilidade!
+**CPFX** é um validador de CPF moderno, rápido e modular, desenvolvido em JavaScript puro.  
+Ideal para validar CPFs em formulários, APIs e projetos web, com fácil integração em frontend e backend.
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Validation Animation" width="300"/>
+  <img src="https://media.giphy.com/media/26tPoyDhjiJ2g7rEs/giphy.gif" alt="CPF Validation" width="320" />
 </p>
 
 ---
 
-## 🚀 Como usar
+## 📋 Conteúdo
 
-### Importando em projetos ES Modules:
+- [Instalação](#-instalação)  
+- [Uso](#-uso)  
+- [API](#-api)  
+- [Exemplos](#-exemplos)  
+- [Contribuição](#-contribuição)  
+- [Licença](#-licença)  
 
-```js
-import { validar } from 'cpfx'; // substitua pelo caminho real, ex: './cpfx.js'
+---
 
-console.log(validar('123.456.789-09')); // false
-console.log(validar('935.411.347-80')); // true
+## ⚙️ Instalação
+
+### Manual
+
+Baixe o arquivo [`cpfx.js`](./cpfx.js) e importe no seu projeto.
+
+### NPM (futuro)
+
+```bash
+npm install cpfx-validator
